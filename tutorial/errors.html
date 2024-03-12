@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. 錯誤和例外 &#8212; Python 3.12.1 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. 錯誤和例外 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=839d9653" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=3221873d"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.1 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -153,7 +153,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 教學</a> &#187;</li>
@@ -196,11 +196,16 @@
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="kc">True</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
 <span class="w">    </span><span class="k">while</span> <span class="kc">True</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
-<span class="w">                   </span><span class="pm">^</span>
+<span class="w">               </span><span class="pm">^^^^^</span>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>剖析器 (parser) 會重複犯錯的那一行，並用一個小「箭頭」指向該行檢測到的第一個錯誤點。錯誤是由箭頭<em>之前</em>的標記 (token) 導致的（或至少是在這裡檢測到的）：此例中，錯誤是在 <a class="reference internal" href="../library/functions.html#print" title="print"><code class="xref py py-func docutils literal notranslate"><span class="pre">print()</span></code></a> 函式中被檢測到，因為在它前面少了一個冒號 (<code class="docutils literal notranslate"><span class="pre">':'</span></code>)。檔案名稱和行號會被印出來，所以如果訊息是來自腳本時，就可以知道去哪裡找問題。</p>
+<p>The parser repeats the offending line and displays little 'arrow's pointing
+at the token in the line where the error was detected.  The error may be
+caused by the absence of a token <em>before</em> the indicated token.  In the
+example, the error is detected at the function <a class="reference internal" href="../library/functions.html#print" title="print"><code class="xref py py-func docutils literal notranslate"><span class="pre">print()</span></code></a>, since a colon
+(<code class="docutils literal notranslate"><span class="pre">':'</span></code>) is missing before it.  File name and line number are printed so you
+know where to look in case the input came from a script.</p>
 </section>
 <section id="exceptions">
 <span id="tut-exceptions"></span><h2><span class="section-number">8.2. </span>例外 (Exception)<a class="headerlink" href="#exceptions" title="Link to this heading">¶</a></h2>
@@ -721,7 +726,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 教學</a> &#187;</li>
@@ -765,7 +770,7 @@
 <br />
     <br />
 
-    最後更新於 Feb 03, 2024 (08:49 UTC)。
+    最後更新於 Mar 12, 2024 (15:00 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

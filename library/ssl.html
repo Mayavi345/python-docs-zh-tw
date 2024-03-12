@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ssl --- socket 物件的 TLS/SSL 包裝器 &#8212; Python 3.12.1 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ssl --- socket 物件的 TLS/SSL 包裝器 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=839d9653" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=3221873d"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.1 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -182,7 +182,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -661,11 +661,7 @@
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.VERIFY_X509_PARTIAL_CHAIN">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">VERIFY_X509_PARTIAL_CHAIN</span></span><a class="headerlink" href="#ssl.VERIFY_X509_PARTIAL_CHAIN" title="Link to this definition">¶</a></dt>
-<dd><p>Possible value for <a class="reference internal" href="#ssl.SSLContext.verify_flags" title="ssl.SSLContext.verify_flags"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.verify_flags</span></code></a>. It instructs OpenSSL to
-accept intermediate CAs in the trust store to be treated as trust-anchors,
-in the same way as the self-signed root CA certificates. This makes it
-possible to trust certificates issued by an intermediate CA without having
-to trust its ancestor root CA.</p>
+<dd><p><a class="reference internal" href="#ssl.SSLContext.verify_flags" title="ssl.SSLContext.verify_flags"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.verify_flags</span></code></a> 可能的值。它指示 OpenSSL 接受信任存儲中的中間 CAs 作為信任錨，就像自簽名的根 CA 憑證。這樣就能去信任中間 CA 所頒發的憑證，而不一定非要去信任其祖先的根 CA。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.10 版新加入.</span></p>
 </div>
@@ -674,7 +670,7 @@ to trust its ancestor root CA.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ssl.VerifyFlags">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">VerifyFlags</span></span><a class="headerlink" href="#ssl.VerifyFlags" title="Link to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="enum.html#enum.IntFlag" title="enum.IntFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.IntFlag</span></code></a> collection of VERIFY_* constants.</p>
+<dd><p><a class="reference internal" href="enum.html#enum.IntFlag" title="enum.IntFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.IntFlag</span></code></a> 為 VERIFY_* 常數的其中一個集合。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.6 版新加入.</span></p>
 </div>
@@ -683,25 +679,19 @@ to trust its ancestor root CA.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.PROTOCOL_TLS">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">PROTOCOL_TLS</span></span><a class="headerlink" href="#ssl.PROTOCOL_TLS" title="Link to this definition">¶</a></dt>
-<dd><p>Selects the highest protocol version that both the client and server support.
-Despite the name, this option can select both &quot;SSL&quot; and &quot;TLS&quot; protocols.</p>
+<dd><p>選擇客戶端及伺服器均可以支援最高協定版本。儘管名稱只有 「TLS」，但實際上「SSL」和「TLS」均可以選擇。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.6 版新加入.</span></p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">在 3.10 版之後被棄用: </span>TLS clients and servers require different default settings for secure
-communication. The generic TLS protocol constant is deprecated in
-favor of <a class="reference internal" href="#ssl.PROTOCOL_TLS_CLIENT" title="ssl.PROTOCOL_TLS_CLIENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">PROTOCOL_TLS_CLIENT</span></code></a> and <a class="reference internal" href="#ssl.PROTOCOL_TLS_SERVER" title="ssl.PROTOCOL_TLS_SERVER"><code class="xref py py-data docutils literal notranslate"><span class="pre">PROTOCOL_TLS_SERVER</span></code></a>.</p>
+<p><span class="versionmodified deprecated">在 3.10 版之後被棄用: </span>TLS 的客戶端及伺服器端需要不同的預設值來實現安全通訊。通用的 TLS 協定常數已被廢除，並改用 <a class="reference internal" href="#ssl.PROTOCOL_TLS_CLIENT" title="ssl.PROTOCOL_TLS_CLIENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">PROTOCOL_TLS_CLIENT</span></code></a> 和 <a class="reference internal" href="#ssl.PROTOCOL_TLS_SERVER" title="ssl.PROTOCOL_TLS_SERVER"><code class="xref py py-data docutils literal notranslate"><span class="pre">PROTOCOL_TLS_SERVER</span></code></a>。</p>
 </div>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.PROTOCOL_TLS_CLIENT">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">PROTOCOL_TLS_CLIENT</span></span><a class="headerlink" href="#ssl.PROTOCOL_TLS_CLIENT" title="Link to this definition">¶</a></dt>
-<dd><p>Auto-negotiate the highest protocol version that both the client and
-server support, and configure the context client-side connections. The
-protocol enables <a class="reference internal" href="#ssl.CERT_REQUIRED" title="ssl.CERT_REQUIRED"><code class="xref py py-data docutils literal notranslate"><span class="pre">CERT_REQUIRED</span></code></a> and
-<a class="reference internal" href="#ssl.SSLContext.check_hostname" title="ssl.SSLContext.check_hostname"><code class="xref py py-attr docutils literal notranslate"><span class="pre">check_hostname</span></code></a> by default.</p>
+<dd><p>自動協商客戶端和服務器都支援的最高協議版本，並配置客戶端語境連線。該協定預設啟用 <a class="reference internal" href="#ssl.CERT_REQUIRED" title="ssl.CERT_REQUIRED"><code class="xref py py-data docutils literal notranslate"><span class="pre">CERT_REQUIRED</span></code></a> 和 <a class="reference internal" href="#ssl.SSLContext.check_hostname" title="ssl.SSLContext.check_hostname"><code class="xref py py-attr docutils literal notranslate"><span class="pre">check_hostname</span></code></a>。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.6 版新加入.</span></p>
 </div>
@@ -710,8 +700,7 @@ protocol enables <a class="reference internal" href="#ssl.CERT_REQUIRED" title="
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.PROTOCOL_TLS_SERVER">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">PROTOCOL_TLS_SERVER</span></span><a class="headerlink" href="#ssl.PROTOCOL_TLS_SERVER" title="Link to this definition">¶</a></dt>
-<dd><p>Auto-negotiate the highest protocol version that both the client and
-server support, and configure the context server-side connections.</p>
+<dd><p>自動協商客戶端和服務器都支援的最高協議版本，並配置客戶端語境連線。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.6 版新加入.</span></p>
 </div>
@@ -729,25 +718,21 @@ server support, and configure the context server-side connections.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.PROTOCOL_SSLv3">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">PROTOCOL_SSLv3</span></span><a class="headerlink" href="#ssl.PROTOCOL_SSLv3" title="Link to this definition">¶</a></dt>
-<dd><p>Selects SSL version 3 as the channel encryption protocol.</p>
-<p>This protocol is not available if OpenSSL is compiled with the
-<code class="docutils literal notranslate"><span class="pre">no-ssl3</span></code> option.</p>
+<dd><p>選擇第三版的 SSL 做為通道加密協定。</p>
+<p>如果 OpenSSL 是用 <code class="docutils literal notranslate"><span class="pre">no-ssl3</span></code> 編譯的，則此項協議無法使用。</p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>SSL version 3 是不安全的，強烈建議不要使用。</p>
+<p>第三版的 SSL 是不安全的，強烈建議不要使用。</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">在 3.6 版之後被棄用: </span>OpenSSL has deprecated all version specific protocols. Use the default
-protocol <a class="reference internal" href="#ssl.PROTOCOL_TLS_SERVER" title="ssl.PROTOCOL_TLS_SERVER"><code class="xref py py-data docutils literal notranslate"><span class="pre">PROTOCOL_TLS_SERVER</span></code></a> or <a class="reference internal" href="#ssl.PROTOCOL_TLS_CLIENT" title="ssl.PROTOCOL_TLS_CLIENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">PROTOCOL_TLS_CLIENT</span></code></a>
-with <a class="reference internal" href="#ssl.SSLContext.minimum_version" title="ssl.SSLContext.minimum_version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.minimum_version</span></code></a> and
-<a class="reference internal" href="#ssl.SSLContext.maximum_version" title="ssl.SSLContext.maximum_version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.maximum_version</span></code></a> instead.</p>
+<p><span class="versionmodified deprecated">在 3.6 版之後被棄用: </span>OpenSSL 已經終止了所有特定版本的協定。請改用預設的 <a class="reference internal" href="#ssl.PROTOCOL_TLS_SERVER" title="ssl.PROTOCOL_TLS_SERVER"><code class="xref py py-data docutils literal notranslate"><span class="pre">PROTOCOL_TLS_SERVER</span></code></a> 協定或帶有 <a class="reference internal" href="#ssl.SSLContext.minimum_version" title="ssl.SSLContext.minimum_version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.minimum_version</span></code></a> 和 <a class="reference internal" href="#ssl.SSLContext.maximum_version" title="ssl.SSLContext.maximum_version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.maximum_version</span></code></a> 的 <a class="reference internal" href="#ssl.PROTOCOL_TLS_CLIENT" title="ssl.PROTOCOL_TLS_CLIENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">PROTOCOL_TLS_CLIENT</span></code></a>。</p>
 </div>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.PROTOCOL_TLSv1">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">PROTOCOL_TLSv1</span></span><a class="headerlink" href="#ssl.PROTOCOL_TLSv1" title="Link to this definition">¶</a></dt>
-<dd><p>Selects TLS version 1.0 as the channel encryption protocol.</p>
+<dd><p>選擇 1.0 版的 TLS 做為通道加密協定。</p>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">在 3.6 版之後被棄用: </span>OpenSSL 已經將所有版本特定的協定棄用。</p>
 </div>
@@ -756,8 +741,7 @@ with <a class="reference internal" href="#ssl.SSLContext.minimum_version" title=
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.PROTOCOL_TLSv1_1">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">PROTOCOL_TLSv1_1</span></span><a class="headerlink" href="#ssl.PROTOCOL_TLSv1_1" title="Link to this definition">¶</a></dt>
-<dd><p>Selects TLS version 1.1 as the channel encryption protocol.
-Available only with openssl version 1.0.1+.</p>
+<dd><p>選擇 1.1 版的 TLS 做為通道加密協定。只有在 1.0.1 版本以上的 OpenSSL 才可以選用。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.4 版新加入.</span></p>
 </div>
@@ -769,8 +753,7 @@ Available only with openssl version 1.0.1+.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.PROTOCOL_TLSv1_2">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">PROTOCOL_TLSv1_2</span></span><a class="headerlink" href="#ssl.PROTOCOL_TLSv1_2" title="Link to this definition">¶</a></dt>
-<dd><p>Selects TLS version 1.2 as the channel encryption protocol.
-Available only with openssl version 1.0.1+.</p>
+<dd><p>選擇 1.2 版的 TLS 做為通道加密協定。只有在 1.0.1 版本以上的 OpenSSL 才可以選用。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.4 版新加入.</span></p>
 </div>
@@ -782,9 +765,7 @@ Available only with openssl version 1.0.1+.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.OP_ALL">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">OP_ALL</span></span><a class="headerlink" href="#ssl.OP_ALL" title="Link to this definition">¶</a></dt>
-<dd><p>Enables workarounds for various bugs present in other SSL implementations.
-This option is set by default.  It does not necessarily set the same
-flags as OpenSSL's <code class="docutils literal notranslate"><span class="pre">SSL_OP_ALL</span></code> constant.</p>
+<dd><p>啟用對 SSL 實作時所產生的各種錯誤的緩解措施。此選項預設被設定。它不一定設定與 OpenSSL 的 <code class="docutils literal notranslate"><span class="pre">SSL_OP_ALL</span></code> 常數相同的旗標。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.2 版新加入.</span></p>
 </div>
@@ -793,9 +774,7 @@ flags as OpenSSL's <code class="docutils literal notranslate"><span class="pre">
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.OP_NO_SSLv2">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">OP_NO_SSLv2</span></span><a class="headerlink" href="#ssl.OP_NO_SSLv2" title="Link to this definition">¶</a></dt>
-<dd><p>Prevents an SSLv2 connection.  This option is only applicable in
-conjunction with <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a>.  It prevents the peers from
-choosing SSLv2 as the protocol version.</p>
+<dd><p>防止 SSLv2 連線。此選項只可以跟 <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a> 一起使用。它會防止同級 (peer)選用 SSLv2 做為協定版本。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.2 版新加入.</span></p>
 </div>
@@ -807,9 +786,7 @@ choosing SSLv2 as the protocol version.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.OP_NO_SSLv3">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">OP_NO_SSLv3</span></span><a class="headerlink" href="#ssl.OP_NO_SSLv3" title="Link to this definition">¶</a></dt>
-<dd><p>Prevents an SSLv3 connection.  This option is only applicable in
-conjunction with <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a>.  It prevents the peers from
-choosing SSLv3 as the protocol version.</p>
+<dd><p>防止 SSLv3 連線。此選項只可以跟 <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a> 一起使用。它會防止同級選用 SSLv3 做為協定版本。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.2 版新加入.</span></p>
 </div>
@@ -821,25 +798,19 @@ choosing SSLv3 as the protocol version.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.OP_NO_TLSv1">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">OP_NO_TLSv1</span></span><a class="headerlink" href="#ssl.OP_NO_TLSv1" title="Link to this definition">¶</a></dt>
-<dd><p>Prevents a TLSv1 connection.  This option is only applicable in
-conjunction with <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a>.  It prevents the peers from
-choosing TLSv1 as the protocol version.</p>
+<dd><p>防止 TLSv1 連線。此選項只可以跟 <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a> 一起使用。它會防止同級選用 TLSv1 做為協定版本。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.2 版新加入.</span></p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">在 3.7 版之後被棄用: </span>The option is deprecated since OpenSSL 1.1.0, use the new
-<a class="reference internal" href="#ssl.SSLContext.minimum_version" title="ssl.SSLContext.minimum_version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.minimum_version</span></code></a> and
-<a class="reference internal" href="#ssl.SSLContext.maximum_version" title="ssl.SSLContext.maximum_version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.maximum_version</span></code></a> instead.</p>
+<p><span class="versionmodified deprecated">在 3.7 版之後被棄用: </span>該選項自從 OpenSSL 1.1.0 以後已被棄用，請改用新的 <a class="reference internal" href="#ssl.SSLContext.minimum_version" title="ssl.SSLContext.minimum_version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.minimum_version</span></code></a> 及 <a class="reference internal" href="#ssl.SSLContext.maximum_version" title="ssl.SSLContext.maximum_version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SSLContext.maximum_version</span></code></a> 代替。</p>
 </div>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.OP_NO_TLSv1_1">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">OP_NO_TLSv1_1</span></span><a class="headerlink" href="#ssl.OP_NO_TLSv1_1" title="Link to this definition">¶</a></dt>
-<dd><p>Prevents a TLSv1.1 connection. This option is only applicable in conjunction
-with <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a>. It prevents the peers from choosing TLSv1.1 as
-the protocol version. Available only with openssl version 1.0.1+.</p>
+<dd><p>防止 TLSv1.1 連線。此選項只可以跟 <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a> 一起使用。它會防止同級選用 TLSv1.1 做為協定版本。只有 1.0.1 版後的 OpenSSL 版本才能使用。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.4 版新加入.</span></p>
 </div>
@@ -851,9 +822,7 @@ the protocol version. Available only with openssl version 1.0.1+.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.OP_NO_TLSv1_2">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">OP_NO_TLSv1_2</span></span><a class="headerlink" href="#ssl.OP_NO_TLSv1_2" title="Link to this definition">¶</a></dt>
-<dd><p>Prevents a TLSv1.2 connection. This option is only applicable in conjunction
-with <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a>. It prevents the peers from choosing TLSv1.2 as
-the protocol version. Available only with openssl version 1.0.1+.</p>
+<dd><p>防止 TLSv1.2 連線。此選項只可以跟 <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a> 一起使用。它會防止同級選用 TLSv1.2 做為協定版本。只有 1.0.1 版後的 OpenSSL 版本才能使用。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.4 版新加入.</span></p>
 </div>
@@ -865,25 +834,19 @@ the protocol version. Available only with openssl version 1.0.1+.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.OP_NO_TLSv1_3">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">OP_NO_TLSv1_3</span></span><a class="headerlink" href="#ssl.OP_NO_TLSv1_3" title="Link to this definition">¶</a></dt>
-<dd><p>Prevents a TLSv1.3 connection. This option is only applicable in conjunction
-with <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a>. It prevents the peers from choosing TLSv1.3 as
-the protocol version. TLS 1.3 is available with OpenSSL 1.1.1 or later.
-When Python has been compiled against an older version of OpenSSL, the
-flag defaults to <em>0</em>.</p>
+<dd><p>防止 TLSv1.3 連線。此選項只可以跟 <a class="reference internal" href="#ssl.PROTOCOL_TLS" title="ssl.PROTOCOL_TLS"><code class="xref py py-const docutils literal notranslate"><span class="pre">PROTOCOL_TLS</span></code></a> 一起使用。它會防止同級選用 TLSv1.3 做為協定版本。TSL1.3 只適用於 1.1.1 版以後的 OpenSSL。當使用 Python 編譯舊版的 OpenSSL 時，該標志預設為 <em>0</em>。</p>
 <div class="versionadded">
-<p><span class="versionmodified added">在 3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6.3 版新加入.</span></p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">在 3.7 版之後被棄用: </span>The option is deprecated since OpenSSL 1.1.0. It was added to 2.7.15,
-3.6.3 and 3.7.0 for backwards compatibility with OpenSSL 1.0.2.</p>
+<p><span class="versionmodified deprecated">在 3.7 版之後被棄用: </span>此選項自 OpenSSL 1.1.0 以後已被棄用。它被添加到 2.7.15 和 3.6.3 中，以向後相容 OpenSSL 1.0.2。</p>
 </div>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="ssl.OP_NO_RENEGOTIATION">
 <span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">OP_NO_RENEGOTIATION</span></span><a class="headerlink" href="#ssl.OP_NO_RENEGOTIATION" title="Link to this definition">¶</a></dt>
-<dd><p>Disable all renegotiation in TLSv1.2 and earlier. Do not send
-HelloRequest messages, and ignore renegotiation requests via ClientHello.</p>
+<dd><p>停用所有在 TLSv1.2 及更早版本的重協商 (renegotiation)。不發送 HelloRequest 訊息，並忽略通過 ClientHello 的重協商請求。</p>
 <p>此選項僅適用於 OpenSSL 1.1.0h 及更新版本。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.7 版新加入.</span></p>
@@ -2122,6 +2085,8 @@ normal EOF (an empty bytes object) in response to unexpected EOF errors
 raised from the underlying socket; if <a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a>, it will raise the
 exceptions back to the caller.</p>
 <p><em>session</em>, see <a class="reference internal" href="#ssl.SSLSocket.session" title="ssl.SSLSocket.session"><code class="xref py py-attr docutils literal notranslate"><span class="pre">session</span></code></a>.</p>
+<p>To wrap an <a class="reference internal" href="#ssl.SSLSocket" title="ssl.SSLSocket"><code class="xref py py-class docutils literal notranslate"><span class="pre">SSLSocket</span></code></a> in another <a class="reference internal" href="#ssl.SSLSocket" title="ssl.SSLSocket"><code class="xref py py-class docutils literal notranslate"><span class="pre">SSLSocket</span></code></a>, use
+<a class="reference internal" href="#ssl.SSLContext.wrap_bio" title="ssl.SSLContext.wrap_bio"><code class="xref py py-meth docutils literal notranslate"><span class="pre">SSLContext.wrap_bio()</span></code></a>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版的變更: </span>Always allow a server_hostname to be passed, even if OpenSSL does not
 have SNI.</p>
@@ -2336,7 +2301,7 @@ extension (default: true).</p>
 <p><span class="versionmodified added">在 3.7 版新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.10 版的變更: </span>The flag had no effect with OpenSSL before version 1.1.1k. Python 3.8.9,
+<p><span class="versionmodified changed">在 3.10 版的變更: </span>The flag had no effect with OpenSSL before version 1.1.1l. Python 3.8.9,
 3.9.3, and 3.10 include workarounds for previous versions.</p>
 </div>
 </dd></dl>
@@ -3163,7 +3128,7 @@ signature algorithm configuration, and rekeying are not supported yet.</p></li>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -3208,7 +3173,7 @@ signature algorithm configuration, and rekeying are not supported yet.</p></li>
 <br />
     <br />
 
-    最後更新於 Feb 03, 2024 (08:49 UTC)。
+    最後更新於 Mar 12, 2024 (15:00 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

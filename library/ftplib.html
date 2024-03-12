@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ftplib --- FTP 協定用戶端 &#8212; Python 3.12.1 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ftplib --- FTP 協定用戶端 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=839d9653" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=3221873d"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.1 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -149,7 +149,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -235,7 +235,7 @@ a password will be automatically generated.</p></li>
 Few systems implement this.
 See <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc959.html">RFC-959</a>
 for more details.</p></li>
-<li><p><strong>timeout</strong> (<a class="reference internal" href="functions.html#int" title="int"><em>int</em></a><em> | </em><em>None</em>) -- 如 <a class="reference internal" href="#ftplib.FTP.connect" title="ftplib.FTP.connect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect()</span></code></a> 的阻塞操作的超時設定，以秒為單位（預設：使用全域預設超時設定）。</p></li>
+<li><p><strong>timeout</strong> (<a class="reference internal" href="functions.html#float" title="float"><em>float</em></a><em> | </em><em>None</em>) -- 如 <a class="reference internal" href="#ftplib.FTP.connect" title="ftplib.FTP.connect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect()</span></code></a> 的阻塞操作的超時設定，以秒為單位（預設：使用全域預設超時設定）。</p></li>
 <li><p><strong>source_address</strong> (<a class="reference internal" href="stdtypes.html#tuple" title="tuple"><em>tuple</em></a><em> | </em><em>None</em>) -- A 2-tuple <code class="docutils literal notranslate"><span class="pre">(host,</span> <span class="pre">port)</span></code> for the socket to bind to as its
 source address before connecting.</p></li>
 <li><p><strong>encoding</strong> (<a class="reference internal" href="stdtypes.html#str" title="str"><em>str</em></a>) -- The encoding for directories and filenames (default: <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code>).</p></li>
@@ -287,7 +287,7 @@ source address before connecting.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>host</strong> (<a class="reference internal" href="stdtypes.html#str" title="str"><em>str</em></a>) -- 要連接的主機。</p></li>
 <li><p><strong>port</strong> (<a class="reference internal" href="functions.html#int" title="int"><em>int</em></a>) -- 要連接的 TCP 連接埠（預設值：<code class="docutils literal notranslate"><span class="pre">21</span></code>，由 FTP 協定規範指定）。很少需要指定不同的連接埠號碼。</p></li>
-<li><p><strong>timeout</strong> (<a class="reference internal" href="functions.html#int" title="int"><em>int</em></a><em> | </em><em>None</em>) -- 連線嘗試的超時設定，以秒為單位（預設：全域預設超時設定）。</p></li>
+<li><p><strong>timeout</strong> (<a class="reference internal" href="functions.html#float" title="float"><em>float</em></a><em> | </em><em>None</em>) -- 連線嘗試的超時設定，以秒為單位（預設：全域預設超時設定）。</p></li>
 <li><p><strong>source_address</strong> (<a class="reference internal" href="stdtypes.html#tuple" title="tuple"><em>tuple</em></a><em> | </em><em>None</em>) -- A 2-tuple <code class="docutils literal notranslate"><span class="pre">(host,</span> <span class="pre">port)</span></code> for the socket to bind to as its
 source address before connecting.</p></li>
 </ul>
@@ -341,7 +341,7 @@ for more details.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ftplib.FTP.voidcmd">
 <span class="sig-name descname"><span class="pre">voidcmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ftplib.FTP.voidcmd" title="Link to this definition">¶</a></dt>
-<dd><p>向伺服器發送一個簡單的命令字串並處理回應。如果收到代表成功的回應狀態碼（範圍為 200--299 的狀態碼），則不回傳任何內容，否則引發 <a class="reference internal" href="#ftplib.error_reply" title="ftplib.error_reply"><code class="xref py py-exc docutils literal notranslate"><span class="pre">error_reply</span></code></a>。</p>
+<dd><p>向伺服器發送一個簡單的命令字串並處理回應。如果收到代表成功的回應狀態碼（範圍為 200--299 的狀態碼），則回傳回應字串，否則引發 <a class="reference internal" href="#ftplib.error_reply" title="ftplib.error_reply"><code class="xref py py-exc docutils literal notranslate"><span class="pre">error_reply</span></code></a>。</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">self</span></code>、<code class="docutils literal notranslate"><span class="pre">cmd</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">ftplib.sendcmd</span></code>。</p>
 </dd></dl>
 
@@ -528,7 +528,7 @@ for more details.</p></li>
 certificates and private keys into a single, potentially long-lived,
 structure.
 Please read <a class="reference internal" href="ssl.html#ssl-security"><span class="std std-ref">Security considerations</span></a> for best practices.</p></li>
-<li><p><strong>timeout</strong> (<a class="reference internal" href="functions.html#int" title="int"><em>int</em></a><em> | </em><em>None</em>) -- 如 <a class="reference internal" href="#ftplib.FTP.connect" title="ftplib.FTP.connect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect()</span></code></a> 的阻塞操作的超時設定，以秒為單位（預設：使用全域預設超時設定）。</p></li>
+<li><p><strong>timeout</strong> (<a class="reference internal" href="functions.html#float" title="float"><em>float</em></a><em> | </em><em>None</em>) -- 如 <a class="reference internal" href="#ftplib.FTP.connect" title="ftplib.FTP.connect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect()</span></code></a> 的阻塞操作的超時設定，以秒為單位（預設：使用全域預設超時設定）。</p></li>
 <li><p><strong>source_address</strong> (<a class="reference internal" href="stdtypes.html#tuple" title="tuple"><em>tuple</em></a><em> | </em><em>None</em>) -- A 2-tuple <code class="docutils literal notranslate"><span class="pre">(host,</span> <span class="pre">port)</span></code> for the socket to bind to as its
 source address before connecting.</p></li>
 <li><p><strong>encoding</strong> (<a class="reference internal" href="stdtypes.html#str" title="str"><em>str</em></a>) -- The encoding for directories and filenames (default: <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code>).</p></li>
@@ -720,7 +720,7 @@ source address before connecting.</p></li>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -765,7 +765,7 @@ source address before connecting.</p></li>
 <br />
     <br />
 
-    最後更新於 Feb 03, 2024 (08:49 UTC)。
+    最後更新於 Mar 12, 2024 (15:00 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
