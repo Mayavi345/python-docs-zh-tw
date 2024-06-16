@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>enum --- 對列舉的支援 &#8212; Python 3.12.3 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enum --- 對列舉的支援 &#8212; Python 3.12.4 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=bb723527" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=17adff09"></script>
+    <script src="../_static/documentation_options.js?v=6bff4b4f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=1fe8cbde"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.3 說明文件 中搜尋"
+          title="在 Python 3.12.4 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -27,6 +27,7 @@
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="graphlib —-- 使用類圖 (graph-like) 結構進行操作的功能" href="graphlib.html" />
     <link rel="prev" title="reprlib --- repr() 的替代實作" href="reprlib.html" />
+    
     <link rel="canonical" href="https://docs.python.org/3/library/enum.html" />
     
       
@@ -236,7 +237,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.3 Documentation</a> &#187;
+      <a href="../index.html">3.12.4 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -820,7 +821,9 @@ total number of mutable/unhashable values in the enum.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="enum.Flag">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">Flag</span></span><a class="headerlink" href="#enum.Flag" title="連結到這個定義">¶</a></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">Flag</span></code> 與 <a class="reference internal" href="#enum.Enum" title="enum.Enum"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a> 相同，但其成員支援位元運算子 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (<em>AND</em>)、<code class="docutils literal notranslate"><span class="pre">|</span></code> (<em>OR</em>)、<code class="docutils literal notranslate"><span class="pre">^</span></code> (<em>XOR</em>) 和 <code class="docutils literal notranslate"><span class="pre">~</span></code> (<em>INVERT</em>)；這些運算子的結果是列舉的成員。</p>
+<dd><p><code class="docutils literal notranslate"><span class="pre">Flag</span></code> is the same as <a class="reference internal" href="#enum.Enum" title="enum.Enum"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a>, but its members support the bitwise
+operators <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (<em>AND</em>), <code class="docutils literal notranslate"><span class="pre">|</span></code> (<em>OR</em>), <code class="docutils literal notranslate"><span class="pre">^</span></code> (<em>XOR</em>), and <code class="docutils literal notranslate"><span class="pre">~</span></code> (<em>INVERT</em>);
+the results of those operations are (aliases of) members of the enumeration.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="enum.Flag.__contains__">
 <span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enum.Flag.__contains__" title="連結到這個定義">¶</a></dt>
@@ -1389,7 +1392,7 @@ total number of mutable/unhashable values in the enum.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.3 Documentation</a> &#187;
+      <a href="../index.html">3.12.4 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1441,7 +1444,7 @@ total number of mutable/unhashable values in the enum.</p>
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
-      最後更新於 Jun 01, 2024 (03:36 UTC)。
+      最後更新於 Jun 16, 2024 (14:25 UTC)。
     
       <a href="/bugs.html">Found a bug</a>?
     

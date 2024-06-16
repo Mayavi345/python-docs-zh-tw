@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. Class（類別） &#8212; Python 3.12.3 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. Class（類別） &#8212; Python 3.12.4 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=bb723527" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=17adff09"></script>
+    <script src="../_static/documentation_options.js?v=6bff4b4f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=1fe8cbde"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.3 說明文件 中搜尋"
+          title="在 Python 3.12.4 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -27,6 +27,7 @@
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="10. Python 標準函式庫概覽" href="stdlib.html" />
     <link rel="prev" title="8. 錯誤和例外" href="errors.html" />
+    
     <link rel="canonical" href="https://docs.python.org/3/tutorial/classes.html" />
     
       
@@ -251,7 +252,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.3 Documentation</a> &#187;
+      <a href="../index.html">3.12.4 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 教學</a> &#187;</li>
@@ -424,7 +425,8 @@ In global scope: global spam
 <span class="k">del</span> <span class="n">x</span><span class="o">.</span><span class="n">counter</span>
 </pre></div>
 </div>
-<p>實例的另一種屬性參照是 <em>method</em>。Method 是一個「屬於」物件的函式。（在 Python 中，術語 method 並不是 class 實例所獨有的：其他物件型別也可以有 method。例如，list 物件具有稱為 append、insert、remove、sort 等 method。但是，在下面的討論中，我們將用術語 method 來專門表示 class 實例物件的 method，除非另有明確說明。）</p>
+<p>The other kind of instance attribute reference is a <em>method</em>. A method is a
+function that &quot;belongs to&quot; an object.</p>
 <p id="index-0">實例物件的有效 method 名稱取決於其 class。根據定義，一個 class 中所有的函式物件屬性，就定義了實例的對應 method。所以在我們的例子中，<code class="docutils literal notranslate"><span class="pre">x.f</span></code> 是一個有效的 method 參照，因為 <code class="docutils literal notranslate"><span class="pre">MyClass.f</span></code> 是一個函式，但 <code class="docutils literal notranslate"><span class="pre">x.i</span></code> 不是，因為 <code class="docutils literal notranslate"><span class="pre">MyClass.i</span></code> 不是。但 <code class="docutils literal notranslate"><span class="pre">x.f</span></code> 與 <code class="docutils literal notranslate"><span class="pre">MyClass.f</span></code> 是不一樣的——它是一個 <em>method 物件</em>，而不是函式物件。</p>
 </section>
 <section id="method-objects">
@@ -858,7 +860,7 @@ In global scope: global spam
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.3 Documentation</a> &#187;
+      <a href="../index.html">3.12.4 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 教學</a> &#187;</li>
@@ -909,7 +911,7 @@ In global scope: global spam
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
-      最後更新於 Jun 01, 2024 (03:36 UTC)。
+      最後更新於 Jun 16, 2024 (14:25 UTC)。
     
       <a href="/bugs.html">Found a bug</a>?
     

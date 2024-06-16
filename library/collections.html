@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>collections --- 容器資料型態 &#8212; Python 3.12.3 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>collections --- 容器資料型態 &#8212; Python 3.12.4 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=bb723527" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=17adff09"></script>
+    <script src="../_static/documentation_options.js?v=6bff4b4f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=1fe8cbde"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.3 說明文件 中搜尋"
+          title="在 Python 3.12.4 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -27,6 +27,7 @@
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="collections.abc --- 容器的抽象基底類別" href="collections.abc.html" />
     <link rel="prev" title="calendar --- 日曆相關函式" href="calendar.html" />
+    
     <link rel="canonical" href="https://docs.python.org/3/library/collections.html" />
     
       
@@ -249,7 +250,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.3 Documentation</a> &#187;
+      <a href="../index.html">3.12.4 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -359,7 +360,8 @@
 <dd><p>回傳一個包含除了第一個以外所有其他對映的新 <a class="reference internal" href="#collections.ChainMap" title="collections.ChainMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code></a> 的特性，可用於需要跳過第一個對映的搜索。使用情境類似於在<a class="reference internal" href="../glossary.html#term-nested-scope"><span class="xref std std-term">巢狀作用域</span></a>當中使用 <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> 關鍵字，也可與內建函式 <a class="reference internal" href="functions.html#super" title="super"><code class="xref py py-func docutils literal notranslate"><span class="pre">super()</span></code></a> 做類比。引用 <code class="docutils literal notranslate"><span class="pre">d.parents</span></code> 等同於 <code class="docutils literal notranslate"><span class="pre">ChainMap(*d.maps[1:])</span></code>。</p>
 </dd></dl>
 
-<p>注意，一個 <a class="reference internal" href="#collections.ChainMap" title="collections.ChainMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap()</span></code></a> 的疊代順序是透過由後往前掃描對映而定：</p>
+<p>Note, the iteration order of a <a class="reference internal" href="#collections.ChainMap" title="collections.ChainMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code></a> is determined by
+scanning the mappings last to first:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">baseline</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;music&#39;</span><span class="p">:</span> <span class="s1">&#39;bach&#39;</span><span class="p">,</span> <span class="s1">&#39;art&#39;</span><span class="p">:</span> <span class="s1">&#39;rembrandt&#39;</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">adjustments</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;art&#39;</span><span class="p">:</span> <span class="s1">&#39;van gogh&#39;</span><span class="p">,</span> <span class="s1">&#39;opera&#39;</span><span class="p">:</span> <span class="s1">&#39;carmen&#39;</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">ChainMap</span><span class="p">(</span><span class="n">adjustments</span><span class="p">,</span> <span class="n">baseline</span><span class="p">))</span>
@@ -1433,7 +1435,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.3 Documentation</a> &#187;
+      <a href="../index.html">3.12.4 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1485,7 +1487,7 @@
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
-      最後更新於 Jun 01, 2024 (03:36 UTC)。
+      最後更新於 Jun 16, 2024 (14:25 UTC)。
     
       <a href="/bugs.html">Found a bug</a>?
     

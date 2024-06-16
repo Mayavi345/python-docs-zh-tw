@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>decimal --- 十進位固定點和浮點運算 &#8212; Python 3.12.3 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>decimal --- 十進位固定點和浮點運算 &#8212; Python 3.12.4 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=bb723527" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=17adff09"></script>
+    <script src="../_static/documentation_options.js?v=6bff4b4f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=1fe8cbde"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.3 說明文件 中搜尋"
+          title="在 Python 3.12.4 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -27,6 +27,7 @@
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="fractions --- 有理數" href="fractions.html" />
     <link rel="prev" title="cmath --- 複數的數學函式" href="cmath.html" />
+    
     <link rel="canonical" href="https://docs.python.org/3/library/decimal.html" />
     
       
@@ -245,7 +246,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.3 Documentation</a> &#187;
+      <a href="../index.html">3.12.4 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1204,6 +1205,53 @@ current context is used.</p>
 <dd><p>Round to the nearest integer without signaling <a class="reference internal" href="#decimal.Inexact" title="decimal.Inexact"><code class="xref py py-const docutils literal notranslate"><span class="pre">Inexact</span></code></a> or
 <a class="reference internal" href="#decimal.Rounded" title="decimal.Rounded"><code class="xref py py-const docutils literal notranslate"><span class="pre">Rounded</span></code></a>.  If given, applies <em>rounding</em>; otherwise, uses the
 rounding method in either the supplied <em>context</em> or the current context.</p>
+</dd></dl>
+
+<p>Decimal numbers can be rounded using the <a class="reference internal" href="functions.html#round" title="round"><code class="xref py py-func docutils literal notranslate"><span class="pre">round()</span></code></a> function:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">round(number)</span></span></dt>
+<dd></dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">round(number,</span> <span class="pre">ndigits)</span></span></dt>
+<dd><p>If <em>ndigits</em> is not given or <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+returns the nearest <a class="reference internal" href="functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> to <em>number</em>,
+rounding ties to even, and ignoring the rounding mode of the
+<a class="reference internal" href="#decimal.Decimal" title="decimal.Decimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code></a> context.  Raises <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> if <em>number</em> is an
+infinity or <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if it is a (quiet or signaling) NaN.</p>
+<p>If <em>ndigits</em> is an <a class="reference internal" href="functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, the context's rounding mode is respected
+and a <a class="reference internal" href="#decimal.Decimal" title="decimal.Decimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code></a> representing <em>number</em> rounded to the nearest
+multiple of <code class="docutils literal notranslate"><span class="pre">Decimal('1E-ndigits')</span></code> is returned; in this case,
+<code class="docutils literal notranslate"><span class="pre">round(number,</span> <span class="pre">ndigits)</span></code> is equivalent to
+<code class="docutils literal notranslate"><span class="pre">self.quantize(Decimal('1E-ndigits'))</span></code>.  Returns <code class="docutils literal notranslate"><span class="pre">Decimal('NaN')</span></code> if
+<em>number</em> is a quiet NaN.  Raises <a class="reference internal" href="#decimal.InvalidOperation" title="decimal.InvalidOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">InvalidOperation</span></code></a> if <em>number</em>
+is an infinity, a signaling NaN, or if the length of the coefficient after
+the quantize operation would be greater than the current context's
+precision.  In other words, for the non-corner cases:</p>
+<ul class="simple">
+<li><p>if <em>ndigits</em> is positive, return <em>number</em> rounded to <em>ndigits</em> decimal
+places;</p></li>
+<li><p>if <em>ndigits</em> is zero, return <em>number</em> rounded to the nearest integer;</p></li>
+<li><p>if <em>ndigits</em> is negative, return <em>number</em> rounded to the nearest
+multiple of <code class="docutils literal notranslate"><span class="pre">10**abs(ndigits)</span></code>.</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">getcontext</span><span class="p">,</span> <span class="n">ROUND_DOWN</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">rounding</span> <span class="o">=</span> <span class="n">ROUND_DOWN</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;3.75&#39;</span><span class="p">))</span>     <span class="c1"># context rounding ignored</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;3.5&#39;</span><span class="p">))</span>      <span class="c1"># round-ties-to-even</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;3.75&#39;</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># uses the context rounding</span>
+<span class="go">Decimal(&#39;3&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;3.75&#39;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">Decimal(&#39;3.7&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;3.75&#39;</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">Decimal(&#39;0E+1&#39;)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -2685,7 +2733,7 @@ are expected to be exact.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.3 Documentation</a> &#187;
+      <a href="../index.html">3.12.4 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -2737,7 +2785,7 @@ are expected to be exact.</p>
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
-      最後更新於 Jun 01, 2024 (03:36 UTC)。
+      最後更新於 Jun 16, 2024 (14:25 UTC)。
     
       <a href="/bugs.html">Found a bug</a>?
     
