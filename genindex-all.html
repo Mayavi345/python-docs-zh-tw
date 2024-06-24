@@ -7,7 +7,7 @@
     <title>索引 &#8212; Python 3.12.4 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?v=bb723527" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?v=41b4f12d" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="_static/pygments_dark.css?v=b20cc3f5" />
     
     <script src="_static/documentation_options.js?v=6bff4b4f"></script>
@@ -44,91 +44,8 @@
             <script type="text/javascript" src="_static/menu.js"></script>
             <script type="text/javascript" src="_static/search-focus.js"></script>
             <script type="text/javascript" src="_static/themetoggle.js"></script> 
-<meta name="readthedocs-addons-api-version" content="1">
-<script type="text/javascript">
- function onSwitch(event) {
-     const option = event.target.selectedIndex;
-     const item = event.target.options[option];
-     window.location.href = item.dataset.url;
- }
-
- document.addEventListener("readthedocs-addons-data-ready", function(event) {
-   const config = event.detail.data()
-
-   // Add some mocked hardcoded versions pointing to the official
-   // documentation while migrating to Read the Docs.
-   // These are only for testing purposes.
-   // TODO: remove them when managing all the versions on Read the Docs,
-   // since all the "active, built and not hidden" versions will be shown automatically.
-   let versions = config.versions.active.concat([
-       {
-           slug: "dev (3.13)",
-           urls: {
-               documentation: "https://docs.python.org/3.13/",
-           }
-       },
-       {
-           slug: "3.12",
-           urls: {
-               documentation: "https://docs.python.org/3.12/",
-           }
-       },
-       {
-           slug: "3.11",
-           urls: {
-               documentation: "https://docs.python.org/3.11/",
-           }
-       },
-   ]);
-
-   const versionSelect = `
-   <select id="version_select">
-   ${ versions.map(
-       (version) => `
-       <option
-           value="${ version.slug }"
-           ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
-           data-url="${ version.urls.documentation }">
-           ${ version.slug }
-       </option>`
-   ).join("\n") }
-   </select>
-   `;
-
-   // Prepend the current language to the options on the selector
-   let languages = config.projects.translations.concat(config.projects.current);
-   languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
-
-   const languageSelect = `
-   <select id="language_select">
-   ${ languages.map(
-       (translation) => `
-       <option
-           value="${ translation.slug }"
-           ${ config.projects.current.slug === translation.slug ? 'selected="selected"' : '' }
-           data-url="${ translation.urls.documentation }">
-           ${ translation.language.name }
-       </option>`
-   ).join("\n") }
-   </select>
-   `;
-
-   // Query all the placeholders because there are different ones for Desktop/Mobile
-   const versionPlaceholders = document.querySelectorAll(".version_switcher_placeholder");
-   for (placeholder of versionPlaceholders) {
-       placeholder.innerHTML = versionSelect;
-       let selectElement = placeholder.querySelector("select");
-       selectElement.addEventListener("change", onSwitch);
-   }
-
-   const languagePlaceholders = document.querySelectorAll(".language_switcher_placeholder");
-   for (placeholder of languagePlaceholders) {
-       placeholder.innerHTML = languageSelect;
-       let selectElement = placeholder.querySelector("select");
-       selectElement.addEventListener("change", onSwitch);
-   }
- });
-</script>
+            <script type="text/javascript" src="_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
 
   </head>
 <body>
@@ -28210,7 +28127,7 @@
 </li>
         <li><a href="whatsnew/2.3.html#index-16">PEP 301</a>
 </li>
-        <li><a href="glossary.html#index-90">PEP 302</a>, <a href="library/functions.html#index-14">[1]</a>, <a href="library/importlib.html#index-12">[2]</a>, <a href="library/importlib.html#index-13">[3]</a>, <a href="library/importlib.html#index-14">[4]</a>, <a href="library/importlib.html#index-16">[5]</a>, <a href="library/importlib.html#index-2">[6]</a>, <a href="library/linecache.html#index-1">[7]</a>, <a href="library/pkgutil.html#index-0">[8]</a>, <a href="library/pkgutil.html#index-2">[9]</a>, <a href="library/pkgutil.html#index-3">[10]</a>, <a href="library/pkgutil.html#index-5">[11]</a>, <a href="library/pkgutil.html#index-6">[12]</a>, <a href="library/pkgutil.html#index-7">[13]</a>, <a href="library/runpy.html#index-1">[14]</a>, <a href="library/sys.html#index-25">[15]</a>, <a href="library/sys.html#index-26">[16]</a>, <a href="library/zipimport.html#index-2">[17]</a>, <a href="reference/import.html#index-1">[18]</a>, <a href="reference/import.html#index-19">[19]</a>, <a href="whatsnew/2.3.html#index-17">[20]</a>, <a href="whatsnew/2.3.html#index-18">[21]</a>, <a href="whatsnew/2.3.html#index-19">[22]</a>, <a href="whatsnew/2.3.html#index-6">[23]</a>, <a href="whatsnew/2.5.html#index-21">[24]</a>, <a href="whatsnew/3.1.html#index-2">[25]</a>, <a href="whatsnew/3.3.html#index-20">[26]</a>, <a href="whatsnew/3.3.html#index-21">[27]</a>, <a href="whatsnew/3.3.html#index-37">[28]</a>
+        <li><a href="glossary.html#index-90">PEP 302</a>, <a href="library/functions.html#index-14">[1]</a>, <a href="library/importlib.html#index-12">[2]</a>, <a href="library/importlib.html#index-13">[3]</a>, <a href="library/importlib.html#index-14">[4]</a>, <a href="library/importlib.html#index-16">[5]</a>, <a href="library/importlib.html#index-2">[6]</a>, <a href="library/linecache.html#index-1">[7]</a>, <a href="library/pkgutil.html#index-16">[8]</a>, <a href="library/pkgutil.html#index-18">[9]</a>, <a href="library/pkgutil.html#index-19">[10]</a>, <a href="library/pkgutil.html#index-21">[11]</a>, <a href="library/pkgutil.html#index-22">[12]</a>, <a href="library/pkgutil.html#index-23">[13]</a>, <a href="library/runpy.html#index-1">[14]</a>, <a href="library/sys.html#index-25">[15]</a>, <a href="library/sys.html#index-26">[16]</a>, <a href="library/zipimport.html#index-2">[17]</a>, <a href="reference/import.html#index-1">[18]</a>, <a href="reference/import.html#index-19">[19]</a>, <a href="whatsnew/2.3.html#index-17">[20]</a>, <a href="whatsnew/2.3.html#index-18">[21]</a>, <a href="whatsnew/2.3.html#index-19">[22]</a>, <a href="whatsnew/2.3.html#index-6">[23]</a>, <a href="whatsnew/2.5.html#index-21">[24]</a>, <a href="whatsnew/3.1.html#index-2">[25]</a>, <a href="whatsnew/3.3.html#index-20">[26]</a>, <a href="whatsnew/3.3.html#index-21">[27]</a>, <a href="whatsnew/3.3.html#index-37">[28]</a>
 </li>
         <li><a href="library/csv.html#index-7">PEP 305</a>, <a href="whatsnew/2.3.html#index-20">[1]</a>
 </li>
@@ -28422,7 +28339,7 @@
 </li>
         <li><a href="whatsnew/3.4.html#index-32">PEP 450</a>, <a href="whatsnew/3.4.html#index-33">[1]</a>, <a href="whatsnew/3.4.html#index-9">[2]</a>
 </li>
-        <li><a href="c-api/module.html#index-7">PEP 451</a>, <a href="library/importlib.html#index-6">[1]</a>, <a href="library/pkgutil.html#index-10">[2]</a>, <a href="library/pkgutil.html#index-11">[3]</a>, <a href="library/runpy.html#index-3">[4]</a>, <a href="library/runpy.html#index-5">[5]</a>, <a href="library/runpy.html#index-8">[6]</a>, <a href="library/sys.html#index-20">[7]</a>, <a href="reference/import.html#index-27">[8]</a>, <a href="whatsnew/3.10.html#index-112">[9]</a>, <a href="whatsnew/3.12.html#index-36">[10]</a>, <a href="whatsnew/3.4.html#index-23">[11]</a>, <a href="whatsnew/3.4.html#index-3">[12]</a>, <a href="whatsnew/3.5.html#index-27">[13]</a>, <a href="whatsnew/changelog.html#index-287">[14]</a>, <a href="whatsnew/changelog.html#index-47">[15]</a>
+        <li><a href="c-api/module.html#index-7">PEP 451</a>, <a href="library/importlib.html#index-6">[1]</a>, <a href="library/pkgutil.html#index-17">[2]</a>, <a href="library/pkgutil.html#index-20">[3]</a>, <a href="library/runpy.html#index-3">[4]</a>, <a href="library/runpy.html#index-5">[5]</a>, <a href="library/runpy.html#index-8">[6]</a>, <a href="library/sys.html#index-20">[7]</a>, <a href="reference/import.html#index-27">[8]</a>, <a href="whatsnew/3.10.html#index-112">[9]</a>, <a href="whatsnew/3.12.html#index-36">[10]</a>, <a href="whatsnew/3.4.html#index-23">[11]</a>, <a href="whatsnew/3.4.html#index-3">[12]</a>, <a href="whatsnew/3.5.html#index-27">[13]</a>, <a href="whatsnew/changelog.html#index-287">[14]</a>, <a href="whatsnew/changelog.html#index-47">[15]</a>
 </li>
         <li><a href="library/ensurepip.html#index-2">PEP 453</a>, <a href="whatsnew/2.7.html#index-19">[1]</a>, <a href="whatsnew/2.7.html#index-20">[2]</a>, <a href="whatsnew/2.7.html#index-21">[3]</a>, <a href="whatsnew/3.4.html#index-1">[4]</a>, <a href="whatsnew/3.4.html#index-19">[5]</a>, <a href="whatsnew/3.4.html#index-20">[6]</a>, <a href="whatsnew/3.4.html#index-27">[7]</a>, <a href="whatsnew/3.4.html#index-42">[8]</a>, <a href="whatsnew/3.4.html#index-5">[9]</a>, <a href="whatsnew/3.4.html#index-52">[10]</a>
 </li>
@@ -39510,7 +39427,7 @@
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
-      最後更新於 Jun 16, 2024 (14:25 UTC)。
+      最後更新於 Jun 24, 2024 (14:15 UTC)。
     
       <a href="/bugs.html">Found a bug</a>?
     
